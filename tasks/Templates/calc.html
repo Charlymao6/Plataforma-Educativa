@@ -1,0 +1,65 @@
+<!--Para heredar lo que viene de base.html-->
+{% extends 'base.html' %} {% block content %}
+
+<main class="container py-5">
+  <section class="card card-body ">
+    <h1 class="display-1 text-center">
+      Calculadora de IMC: Indice de Masa Corporal
+    </h1>
+    <!-- FORMULARIO HTML -->
+    <div class="col-md-4 offset-md-4 mt-5">
+		<p>Ingrese peso (kg): <input type="text" id="kg" /></p>
+    	<p>Ingrese Altura (m): <input type="text" id="m" /></p>
+	</div>
+	
+    <div class="text-center py-2">
+		<button id="calc" class="btn btn-primary text-center py-2">Calcular</button>
+	</div>
+	
+	<div class="col-md-4 offset-md-4 mt-1">
+		<p>IMC: <span id="imc"></span></p>
+		<p>Lectura: <span id="lectura"></span></p>
+	</div>
+    
+
+    <!-- SCRIPT PARA CALCULAR IMC -->
+    <script type="text/javascript">
+      calc = document.getElementById("calc");
+      kg = document.getElementById("kg");
+      m = document.getElementById("m");
+      imc = document.getElementById("imc");
+      lectura = document.getElementById("lectura");
+    
+      calc.onclick = function () {
+        if (kg.value != "" && m.value != "") {
+          imcx = kg.value / (m.value * m.value);
+          imc.innerHTML = imcx.toFixed(2);
+          console.log(imcx);
+
+          if (imcx < 18.5) {
+            lectura.innerHTML = "Peso inferior al normal";
+          } else if (imcx >= 18.5 && imcx <= 24.9) {
+            lectura.innerHTML = "Peso normal";
+          } else if (imcx >= 25 && imcx <= 29.9) {
+            lectura.innerHTML = "Sobre peso";
+          } else if (imcx >= 30 && imcx <=34.5) {
+            lectura.innerHTML = "Obesidad grado I";
+          }else if (imcx >= 34.6 && imcx <=40) {
+            lectura.innerHTML = "Obesidad grado II";
+          }else if (imcx >40) {
+            lectura.innerHTML = "Obesidad grado III";
+          }
+        } else {
+          alert("Debes ingresar peso y altura.");
+        }
+      };
+    </script>
+  </section>
+</main>
+<div class="container-fluid text-center mb-5">
+  <img src="https://www.gob.mx/cms/uploads/image/file/683701/Captura_de_Pantalla_2021-11-06_a_la_s__10.35.53.png" 
+  class="img-responsive" alt="404 NOT FOUND" >
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,30 @@
+<!--Para heredar lo que viene de base.html-->
+{% extends 'base.html' %}
+<!--Estructura General para el código HTML5 que se usa en toda la aplicación-->
+{% block content %}
+
+<main class="container py-5">
+    <section class="card card-body" >
+        <h1 class="display-1 text-center">PROYECTO PARA EL CONTROL DE OBESIDAD</h1>
+        
+        <p align="center" class="m-5">El Atlas Mundial de la Obesidad (World Obesity Atlas) dio a conocer que en el 2020 había 1,079 millones de personas con algún tipo de obesidad en todo el mundo, cifra que se prevé pueda agravarse y llegar a los 1,469 millones para el año 2030.</p>
+
+        <p align="center" ><b>México</b> ocupa el quinto lugar en la tabla de países que tienen mayor población con este problema en el mundo y se espera que en una década el 36.8% de la población adulta mexicana padezca este trastorno, es decir, más de 35 millones de personas, según el Atlas.
+        Este estudio presentado en marzo de 2022 ha revelado que la mayor cantidad de población con obesidad se concentra en cinco países: Estados Unidos, China, Brasil, India y México.
+        La Encuesta Nacional de Salud y Nutrición (ENSANUT) 2021 realizada por el Instituto Nacional de Estadística y Geografía (Inegi) señaló ques, por grupos de edad y sexo, las personas que presentan más esta enfermedad son los mexicanos que se encuentran entre los 30 a 39 años de edad, con el 39.6% de esa población con obesidad. </p>
+        
+        <p align="center" >Este proyecto busca informar y ayudar a los usuarios calculando sus requerimientos calóricos y alimenticios, y brindar soluciones para mejorar su alimentación.</p>
+        
+        <div class="container">
+            <a href="https://acortar.link/aGjSe2 " target="_blank"><em>Artículo relacionado</em></a>
+        </div>
+        
+    </section>
+    <div class="text-center py-2">
+        <a class="btn btn-primary" href="/singup/">Crear usuario</a>
+        <a class="btn btn-primary" href="/singin/">Iniciar sesión</a>
+    </div>
+</main>
+
+{% endblock %}
+

@@ -1,0 +1,27 @@
+<!--Para heredar lo que viene de base.html-->
+{% extends 'base.html' %}
+
+{% block content %}
+    <main class="container"> 
+        <div class="row">
+            <div class="col-md-5 offset-4 mt-5">
+                <form action="/task/create/" method="POST" class="card card-body">
+                    <h1 class="text-center">Información personal</h1>
+                    {{error}}
+                    {% csrf_token %}
+                
+                    {{form.as_p}}
+                    {{formS.as_p}}
+                    {{formL.as_p}}
+                    {{formC.as_p}}
+            
+                    <button class="btn btn-primary">
+                        Guardar
+                    </button>
+                    
+                </form>
+                
+            </div>
+        </div>
+    </main>
+{% endblock %}
